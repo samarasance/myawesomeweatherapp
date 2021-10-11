@@ -4,14 +4,6 @@ h1 {
   line-height: 4px;
 }
 
-.city-input {
-  display: block;
-  background: #fff;
-  filter: drop-shadow(0 0 0.75rem crimson);
-  text-align: center;
-  margin: 0 auto;
-}
-
 .container {
   border: 4px solid rgb(173, 201, 173);
   border-radius: 4px;
@@ -32,4 +24,22 @@ h1 {
 }
 .temp {
   font-size: 20px;
+}
+.current {
+  font-family: "Courier New", Courier, monospace;
+  font-weight: bolder;
+  height: 5px;
+}
+
+.temperature {
+  font-size: 45px;
+  height: 50px;
+  font-stretch: ultra-expanded;
+}
+.city {
+  font-size: 35px;
+  text-align: right;
+  font-family: "Bitter", serif;
+  display: block;
+  color: gray;
 }
