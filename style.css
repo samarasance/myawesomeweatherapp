@@ -1,0 +1,13 @@
+h1 {
+  text-align: center;
+  font-family: "Atma", cursive;
+  line-height: 4px;
+}
+
+.city-input {
+  display: block;
+  background: #fff;
+  filter: drop-shadow(0 0 0.75rem crimson);
+  text-align: center;
+  margin: 0 auto;
+}
