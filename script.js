@@ -1,5 +1,3 @@
-let apiKey = "292929ff665169ef5a98dcc8cc29979a";
-
 function updateTime(date) {
   let currentHour = date.getHours();
   let currentMinute = date.getMinutes();
@@ -58,10 +56,32 @@ let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", convertToC);
 
 function showTemp(response) {
-
-let theTemp = Math.round(response.data.main.temp);
-let tempDisplay = document.querySelector("#temperature");
-  tempDisplay.innerHTML = `${theTemp}°`
+  let theTemp = Math.round(response.data.main.temp);
+  let tempDisplay = document.querySelector("#temperature");
+  tempDisplay.innerHTML = `${theTemp}°`;
 
   let description = document.querySelector("#today-description");
   description.innerHTML = response.data.weather[0].description;
+
+  let theWind = Math.round(response.data.wind.speed);
+  let windDisplay = document.querySelector("#windy");
+  windDisplay.innerHTML = `Windspeed: ${theWind}`;
+}
+
+function showCity(response) {
+  let resultCity = response.data.name;
+
+  let displayCity = document.querySelector("#current-city");
+  displayCity.innerHTML = `${resultCity}`;
+}
+
+function showPosition(position) {
+  let latitude = position.coords.latitude;
+  let longitude = position.coords.longitude;
+  let unit = "metric";
+  let apiEndpoint = "https://api.openweathermap.org/data/2.5/weather";
+  let apiKey = "292929ff665169ef5a98dcc8cc29979a";
+  let apiUrl = `${apiEndpoint}?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=${unit}`;
+
+  axios.get(apiUrl).then(showCity);
+}
