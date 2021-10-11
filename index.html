@@ -18,6 +18,8 @@
       href="https://fonts.googleapis.com/css2?family=Atma:wght@300&display=swap"
       rel="stylesheet"
     />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
   </head>
   <body>
 
@@ -26,19 +28,27 @@
       <h1><strong>Welcome</strong></h1>
       <div class="row">
         <div class="col">
+          <form class="search-form" id= "search-form">
           <input
-            class="city-input"
-            type="text"
-            placeholder="Enter a city"
-            style="width: 800px"
-          />
+                type="search"
+                autocomplete="off"
+                autocomplete="on"
+                placeholder="Enter a city"
+                id="city-input"
+                class="form-control shadow-sm"
+              />
+
+
+
+
         </div>
-        <div class="col"><button type="button" class="btn btn-primary">Search</button></div>
+        <div class="col"><button type="submit" class="btn btn-primary">Search</button></div>
         
       </div>
+    </form>
 <h3 class="date">
     <strong>Today is: </strong>
-        October 10, 2021</h3>
+        October 10, 2021 it is 10:19 pm</h3>
       
           
         
@@ -46,7 +56,8 @@
   <div class="row">
     <div class="col-3">
       <div class="day">
-          Monday
+          Monday ☀️
+
       </div>
       <div class="temp">
           91°/69° 
@@ -54,7 +65,7 @@
     </div>
     <div class="col-3">
         <div class="day">
-          Tuesday
+          Tuesday  🌤
       </div>
       <div class="temp">
           88°/68° 
@@ -62,7 +73,7 @@
     </div>
     <div class="col-3">
         <div class="day">
-          Wednesday
+          Wednesday 🌦
       </div>
       <div class="temp">
           94°/71° 
@@ -70,15 +81,20 @@
       </div>
      <div class="col-3">
           <div class="day">
-          Thursday
+          Thursday 🌥
       </div>
       <div class="temp">
           91°/69° 
       </div>
+      
   </div>
+  
+  <button type="button" class="location">Get Location</button>
 </div>
 </div>
+
       </div>
+      
     
 
       <script src="script.js"></script>
