@@ -44,3 +44,7 @@ h1 {
   display: block;
   color: gray;
 }
+
+.find-me {
+  background-color: gray;
+}

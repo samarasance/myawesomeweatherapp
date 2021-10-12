@@ -33,15 +33,25 @@ function updateTime(date) {
   return `${currentDay}, ${currentHour}:${currentMinute}`;
 }
 
-function searchCity(event) {
-  event.preventDefault();
-  let cityResults = document.querySelector("#city");
-  let searchInput = document.querySelector("#btn btn-primary");
-
-  cityResults.innerHTML = searchInput.value;
+function searchCity(city) {
+  let apiKey = "292929ff665169ef5a98dcc8cc29979a";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(displayWeatherCondition);
 }
+
+function handleSubmit(event) {
+  event.preventDefault();
+  let city = document.querySelector("#current-city").value;
+  searchCity(city);
+}
+
+function searchCity(event) {
+  event.preventDefault();
+  let cityResults = document.querySelector("#current-city");
+  let searchInput = document.querySelector("#btn btn-primary");
+
+  cityResults.innerHTML = searchInput.value;
+ 
 
 function convertToF(event) {
   event.preventDefault();
@@ -57,7 +67,7 @@ function convertToC(event) {
 
 let changeTime = document.querySelector("#weather-time-now");
 let currentTime = new Date();
-changeTime.innerHTML = updateTime(currentHour, currentMinute);
+changeTime.innerHTML = updateTime(currentTime);
 
 let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", searchCity);
@@ -88,18 +98,21 @@ function showCity(response) {
   displayCity.innerHTML = `${currentCity}`;
 }
 
-function showPosition(position) {
-  let latitude = position.coords.latitude;
-  let longitude = position.coords.longitude;
-  let unit = "metric";
-  let apiEndpoint = "https://api.openweathermap.org/data/2.5/weather";
-  let apiKey = "292929ff665169ef5a98dcc8cc29979a";
-  let apiUrl = `${apiEndpoint}?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=${unit}`;
 
-  axios.get(apiUrl).then(showCity);
+function searchLocation(position) {
+  let apiKey = "292929ff665169ef5a98dcc8cc29979a";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${
+    position.coords.latitude
+  }&lon=${position.coords.longitude}&appid=${apiKey}&units=metric`;
+
+  axios.get(apiUrl).then(displayWeatherCondition);
 }
 
-function showPosition(position) {
-  console.log(position);
-  navigator.geolocation.getCurrentPosition(showPosition);
+function getCurrentLocation(event) {
+  event.preventDefault();
+  navigator.geolocation.getCurrentPosition(searchPosition);
+
+
+let currentLocationButton = document.querySelector("#current-location-button");
+currentLocationButton.addEventListener("click", getCurrentPosition);
 }
