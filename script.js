@@ -1,8 +1,22 @@
 function updateTime(date) {
-  let currentHour = date.getHours();
-  let currentMinute = date.getMinutes();
-  if (currentMinute < 10) {
-    currentMinute = `0${currentMinute}`;
+  let currentYear = now.getFullYear();
+  let currentDay = days[now.getDay()];
+  let currentMonth = months[now.getMonth()];
+  let currentDate = now.getDate();
+  let currentHour = now.getHours();
+  let currentMinute = addZero(now.getMinutes());
+
+  if (currentHour >= 12) {
+    var timeOfDay = "pm";
+  } else {
+    var timeOfDay = "am";
+  }
+
+  function addZero(x) {
+    if (x < 10) {
+      x = "0" + x;
+    }
+    return x;
   }
 
   let dayIndex = date.getDay();
@@ -15,7 +29,6 @@ function updateTime(date) {
     "Friday",
     "Saturday",
   ];
-  let currentDay = days[dayIndex];
 
   return `${currentDay}, ${currentHour}:${currentMinute}`;
 }
@@ -44,7 +57,7 @@ function convertToC(event) {
 
 let changeTime = document.querySelector("#weather-time-now");
 let currentTime = new Date();
-changeTime.innerHTML = updateTime(currentTime);
+changeTime.innerHTML = updateTime(currentHour, currentMinute);
 
 let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", searchCity);
@@ -59,20 +72,20 @@ function showTemp(response) {
   let theTemp = Math.round(response.data.main.temp);
   let tempDisplay = document.querySelector("#temperature");
   tempDisplay.innerHTML = `${theTemp}°`;
-
-  let description = document.querySelector("#today-description");
-  description.innerHTML = response.data.weather[0].description;
-
-  let theWind = Math.round(response.data.wind.speed);
-  let windDisplay = document.querySelector("#windy");
-  windDisplay.innerHTML = `Windspeed: ${theWind}`;
 }
 
+let description = document.querySelector("#today-description");
+description.innerHTML = response.data.weather[0].description;
+
+let theWind = Math.round(response.data.wind.speed);
+let windDisplay = document.querySelector("#windy");
+windDisplay.innerHTML = `Windspeed: ${theWind}`;
+
 function showCity(response) {
-  let resultCity = response.data.name;
+  let currentCity = response.data.name;
 
   let displayCity = document.querySelector("#current-city");
-  displayCity.innerHTML = `${resultCity}`;
+  displayCity.innerHTML = `${currentCity}`;
 }
 
 function showPosition(position) {
@@ -84,4 +97,9 @@ function showPosition(position) {
   let apiUrl = `${apiEndpoint}?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=${unit}`;
 
   axios.get(apiUrl).then(showCity);
+}
+
+function showPosition(position) {
+  console.log(position);
+  navigator.geolocation.getCurrentPosition(showPosition);
 }
