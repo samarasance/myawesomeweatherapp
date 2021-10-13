@@ -40,6 +40,12 @@
       href="https://fonts.googleapis.com/css2?family=Atma:wght@300&family=Bitter:wght@500&family=Dosis:wght@300&family=Roboto+Mono:ital,wght@1,300&display=swap"
       rel="stylesheet"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Atma:wght@300&family=Bitter:wght@500&family=Dosis:wght@300&family=Patrick+Hand&family=Roboto+Mono:ital,wght@1,300&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <div class="container">
@@ -62,17 +68,17 @@
         </div>
       </div>
 
-      <h3 class="date">
+      <h2>
         <strong>Today is: </strong>
-        <p class="today-is">October 10, 2021</p>
-        it is <span class="weather-time-now" id="current-time">10:10 pm</span>
-      </h3>
+      </h2>
+      <h3 class="date"></h3>
+
       <br />
       <p class="current">Current Temperature</p>
       <br />
 
-      <p class="temperature">84</p>
-      <span class="temp-units"></span>
+      <h3 class="temperature">84</h3>
+      <h2 class="temp-units"></h2>
       <a href="#" id="celsius-link">°C</a> |
       <a href="#" id="fahrenheit-link">°F</a>
 
@@ -80,7 +86,7 @@
         <col-3>
           <div class="row">
             <div class="col-3">
-              <h2 class="current-city">Washington DC</h2>
+              <h2 class="city" id="city"></h2>
             </div>
           </div>
         </col-3>
