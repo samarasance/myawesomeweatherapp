@@ -25,7 +25,7 @@ function displayWeatherCondition(response) {
   document.querySelector(".temperature").innerHTML = Math.round(
     response.data.main.temp
   );
-  document.querySelector(".description").innerHTML =
+  document.querySelector(".today-description").innerHTML =
     response.data.weather[0].main;
 }
 function searchCity(city) {
