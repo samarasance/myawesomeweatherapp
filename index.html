@@ -49,78 +49,85 @@
   </head>
   <body>
     <div class="container">
-      <div class="weather-app">
-        <h1><strong>Welcome</strong></h1>
-        <div class="row">
-          <div class="col">
-            <form class="search-form" id="search-form">
-              <input
-                type="search"
-                autocomplete="off"
-                autocomplete="on"
-                placeholder="Enter a city"
-                id="city-input"
-                class="form-control shadow-sm"
-              />
-            </form>
+      <div class="weather-app-wrapper">
+        <div class="weather-app">
+          <h1><strong>Welcome</strong></h1>
+          <div class="row">
+            <div class="col">
+              <form class="search-form" id="search-form">
+                <input
+                  type="search"
+                  autocomplete="off"
+                  autocomplete="on"
+                  placeholder="Enter a city"
+                  id="city-input"
+                  class="form-control shadow-sm"
+                />
+              </form>
+            </div>
+            <div class="col">
+              <button type="submit" class="btn btn-primary">Search</button>
+            </div>
           </div>
-          <div class="col">
-            <button type="submit" class="btn btn-primary">Search</button>
-          </div>
-        </div>
 
-        <h2>
-          <strong>Today is: </strong>
-        </h2>
-        <h3 class="date"></h3>
+          <h2>
+            <strong>Today is: </strong>
+          </h2>
+          <h3 class="date"></h3>
 
-        <br />
-        <p class="current">Current Temperature</p>
-        <br />
+          <br />
+          <p class="current">Current Temperature</p>
+          <br />
 
-        <h3 class="temperature">84</h3>
-        <h2 class="temp-units"></h2>
-        <a href="#" id="celsius-link">°C</a> |
-        <a href="#" id="fahrenheit-link">°F</a>
+          <h3 class="temperature">84</h3>
+          <h2 class="temp-units"></h2>
+          <a href="#" id="celsius-link">°C</a> |
+          <a href="#" id="fahrenheit-link">°F</a>
 
-        <row>
-          <col-3>
+          <row>
+            <col-3>
+              <div class="row">
+                <div class="col-3">
+                  <h2 class="city" id="city"></h2>
+                </div>
+              </div>
+            </col-3>
+            <h3 class="today-description"></h3>
+            <h4 class="windy"></h4>
             <div class="row">
               <div class="col-3">
-                <h2 class="city" id="city"></h2>
+                <div class="day">Monday ☀️</div>
+                <div class="temp">91°/69°</div>
               </div>
-            </div>
-          </col-3>
-          <h3 class="today-description"></h3>
-          <h4 class="windy"></h4>
-          <div class="row">
-            <div class="col-3">
-              <div class="day">Monday ☀️</div>
-              <div class="temp">91°/69°</div>
-            </div>
-            <div class="col-3">
-              <div class="day">Tuesday 🌤</div>
-              <div class="temp">88°/68°</div>
-            </div>
-            <div class="col-3">
-              <div class="day">Wednesday 🌦</div>
-              <div class="temp">94°/71°</div>
-            </div>
-            <div class="col-3">
-              <div class="day">Thursday 🌥</div>
-              <div class="temp">91°/69°</div>
-            </div>
+              <div class="col-3">
+                <div class="day">Tuesday 🌤</div>
+                <div class="temp">88°/68°</div>
+              </div>
+              <div class="col-3">
+                <div class="day">Wednesday 🌦</div>
+                <div class="temp">94°/71°</div>
+              </div>
+              <div class="col-3">
+                <div class="day">Thursday 🌥</div>
+                <div class="temp">91°/69°</div>
+              </div>
 
-            <button type="button" class="find-me" id="current-location-button">
-              Get Location
-            </button>
-          </div>
-        </row>
-
-        <a href="https://github.com/samarasance/myawesomeweatherapp"
-          >Open-Code source</a
-        >
-        <p>by Samara Sance</p>
+              <button
+                type="button"
+                class="find-me"
+                id="current-location-button"
+              >
+                Get Location
+              </button>
+            </div>
+          </row>
+        </div>
+        <small>
+          <a href="https://github.com/samarasance/myawesomeweatherapp"
+            >Open-Code source</a
+          >
+          <p>by Samara Sance</p>
+        </small>
       </div>
     </div>
     <script src="script.js"></script>

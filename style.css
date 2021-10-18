@@ -4,16 +4,12 @@ h1 {
   line-height: 4px;
 }
 
-.weather-app {
-  border: 1px solid rgb(173, 201, 173);
-  border-radius: 14px;
-  margin: 30px auto;
-  max-width: 800px;
-  padding: 20px;
-}
-
 h2 {
   text-align: center;
+}
+
+small {
+  font-family: "Roboto Mono", monospace;
 }
 
 .today-is {
@@ -62,4 +58,16 @@ h2 {
 
 .temp-units {
   text-align: center;
+}
+
+.weather-app-wrapper {
+  margin: 30px auto;
+  max-width: 800px;
+}
+
+.weather-app {
+  border: 1px solid rgb(173, 201, 173);
+  border-radius: 14px;
+
+  padding: 20px;
 }
