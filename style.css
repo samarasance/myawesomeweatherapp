@@ -32,19 +32,15 @@ small {
   font-family: "Courier New", Courier, monospace;
   font-weight: bolder;
   height: 5px;
-  text-align: center;
+  text-align: left;
   text-decoration: wavy;
-}
-.small-temp {
-  font-size: 16px;
-  text-align: center;
 }
 
 .temperature {
   font-size: 65px;
   height: 50px;
   font-stretch: ultra-expanded;
-  text-align: center;
+  text-align: left;
   font-weight: 400;
   line-height: 1;
 }
@@ -64,10 +60,6 @@ small {
   max-width: 400px;
 }
 
-.temp-units {
-  text-align: center;
-}
-
 .weather-app-wrapper {
   margin: 30px auto;
   max-width: 800px;
@@ -84,8 +76,15 @@ small {
   margin-bottom: 20px;
 }
 .weather-temperature img {
-  margin-right: 20px;
+  margin-right: 5px;
   float: left;
   height: 75px;
   width: 80px;
+}
+
+.weather-temperature.units {
+  position: relative;
+  font-size: 15px;
+  text-align: center;
+  top: -34px;
 }
