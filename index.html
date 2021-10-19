@@ -56,6 +56,8 @@
             <div class="row">
               <div class="col">
                 <form class="search-form" id="search-form">
+                  <div class="row">
+                    <div class="col-9">
                   <input
                     type="search"
                     autocomplete="off"
@@ -64,18 +66,24 @@
                     id="city-input"
                     class="form-control shadow-sm"
                   />
-                </form>
+                
               </div>
-              <div class="col">
-                <button type="submit" class="btn btn-primary">Search</button>
+              <div class="col-3">
+                 <input
+                  type="submit"
+                  value="Search"
+                  class="btn btn-primary w-100"
+                />
               </div>
             </div>
+           
+          
 
-            <h2>
+            <ul>
               <strong>Today is: </strong>
-            </h2>
+           
             <h3 class="date"></h3>
-
+            </ul>
             <br />
             <div class="clearfix weather-temperature">
               <img
@@ -85,23 +93,21 @@
               />
               <div class="float-left">
                 <p class="current">Current Temperature</p>
-                <br />
-
-                <h3 class="temperature">84°</h3>
-                  <span class="units">
-                    <a href="#" id="celsius-link">°C</a> |
-                    <a href="#" id="fahrenheit-link">°F</a>
-                  </div>
                 
+              </div>
+              <h3 class="temperature">84°</h3>
+              <span class="units">
+                <a href="#" id="celsius-link">°C</a> |
+                <a href="#" id="fahrenheit-link">°F</a>
               </span>
-              <div class="col-6">
-              <ul>
-                <li>Humidity: <span id="humidity"></span>%</li>
-                <li>Wind: <span id="wind"></span> km/h</li>
-              </ul>
             </div>
+         
 
-            </div>
+          <div class="col-5">
+            <ul>
+              <li>Humidity: <span id="humidity"></span>%</li>
+              <li>Wind: <span id="wind"></span> km/h</li>
+            </ul>
           </div>
           <row>
             <col-3>
@@ -140,15 +146,14 @@
               </button>
             </div>
           </row>
-        </div>
+       
         <small>
           <a href="https://github.com/samarasance/myawesomeweatherapp"
-            >Open-Code source</a
-          >
-          <p>by Samara Sance</p>
+            >Open-Code source</a>
+          by Samara Sance
         </small>
-      </div>
-    </div>
+      
+    
     <script src="script.js"></script>
   </body>
 </html>
