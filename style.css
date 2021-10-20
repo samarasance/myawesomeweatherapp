@@ -27,9 +27,8 @@ li {
   text-align: right;
 }
 
-.today-is {
-  font-family: "Atma", cursive;
-  font-family: "Roboto Mono", monospace;
+.today {
+  font-family: "IM Fell English SC", serif;
   color: midnightblue;
   font-size: 55px;
   text-align: center;
@@ -46,7 +45,7 @@ li {
   font-family: "Courier New", Courier, monospace;
   font-weight: bolder;
   height: 5px;
-  text-align: left;
+  text-align: center;
   text-decoration: wavy;
 }
 

@@ -46,14 +46,17 @@
       href="https://fonts.googleapis.com/css2?family=Atma:wght@300&family=Bitter:wght@500&family=Dosis:wght@300&family=Patrick+Hand&family=Roboto+Mono:ital,wght@1,300&display=swap"
       rel="stylesheet"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IM+Fell+English+SC&display=swap" rel="stylesheet">
   </head>
   <body>
     <div class="container">
       <div class="weather-app-wrapper">
         <div class="weather-app">
-           <form id="search-form" class="mb-3"></form>
-          <div class="overview">
-            <h1><strong>Welcome</strong></h1>
+          <h1><strong>Welcome</strong></h1>
+           <form id="search-form" class="mb-3"> 
+            
             <div class="row">
               <div class="col">
                 <form class="search-form" id="search-form">
@@ -62,7 +65,6 @@
                   <input
                     type="search"
                     autocomplete="off"
-                    autocomplete="on"
                     placeholder="Enter a city"
                     id="city-input"
                     class="form-control shadow-sm"
@@ -77,25 +79,32 @@
                 />
               </div>
             </div>
+           </form>
+           <div class="overview">
+            <h1 id="city"></h1>
+            <ul>
+              <li>Last updated: <span id="date"></span></li>
+              <li id="description"></li>
+            </ul>
+          </div>
+              <h2 class="today">Today is: </h2>
+
+            <div class="row">
+            <div class="col-6">
+              <div class="clearfix weather-temperature">
+                <img src="https://ssl.gstatic.com/onebox/weather/64/sunny.png" alt="Clear" id="icon" class="float-left" />
+                <div class="float-left">
+                  <strong id="temperature"></strong
+                  ><span class="units"> °C</span>
+                </div>
+              </div>
+            </div>
            
           
-
-            <ul>
-              <strong>Today is: </strong>
-           
-            <h3 class="date"></h3>
-            </ul>
-            <br />
-            <div class="clearfix weather-temperature">
-              <img
-                src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
-                alt="Partly Cloudy"
-                class="float left"
-              />
-              <div class="float-left">
-                <p class="current">Current Temperature</p>
+            
+                <h3 class="current">Current Temperature</h3>
                 
-              </div>
+            
               <h3 class="temperature">84°</h3>
               <span class="units">
                 <a href="#" id="celsius-link">°C</a> |
@@ -104,40 +113,18 @@
             </div>
          
 
-          <div class="col-5">
+          <div class="col-8">
+            <div class= "row">
             <ul>
               <li>Humidity: <span id="humidity"></span>%</li>
               <li>Wind: <span id="wind"></span> km/h</li>
             </ul>
           </div>
-          <row>
-            <col-3>
-              <div class="row">
-                <div class="col-3">
-                  <h2 class="city" id="city"></h2>
-                </div>
-              </div>
-            </col-3>
-            <h3 class="today-description"></h3>
-            <h4 class="windy"></h4>
-            <div class="row">
-              <div class="col-3">
-                <div class="day">Monday ☀️</div>
-                <div class="temp">91°/69°</div>
-              </div>
-              <div class="col-3">
-                <div class="day">Tuesday 🌤</div>
-                <div class="temp">88°/68°</div>
-              </div>
-              <div class="col-3">
-                <div class="day">Wednesday 🌦</div>
-                <div class="temp">94°/71°</div>
-              </div>
-              <div class="col-3">
-                <div class="day">Thursday 🌥</div>
-                <div class="temp">91°/69°</div>
-              </div>
-
+          </div>
+         
+              <div class="weather-forecast" id="forecast"></div>
+            
+</div>
               <button
                 type="button"
                 class="find-me"
@@ -145,9 +132,10 @@
               >
                 Get Location
               </button>
-            </div>
-          </row>
-       
+            
+          
+          
+       </div>
         <small>
           <a href="https://github.com/samarasance/myawesomeweatherapp"
             >Open-Code source</a>
