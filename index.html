@@ -55,22 +55,20 @@
       <div class="weather-app-wrapper">
         <div class="weather-app">
           <h1><strong>Welcome</strong></h1>
-           <form id="search-form" class="mb-3"> 
-            
-            <div class="row">
-              <div class="col">
-                <form class="search-form" id="search-form">
-                  <div class="row">
-                    <div class="col-9">
-                  <input
-                    type="search"
-                    autocomplete="off"
-                    placeholder="Enter a city"
-                    id="city-input"
-                    class="form-control shadow-sm"
-                  />
-                
+           <div class="row">
+        <div class="col">
+          <form class="search-form" id="search-form">
+            <input
+              type="search"
+              autocomplete="off"
+              autocomplete="on"
+              placeholder="Enter a city"
+              id="city-input"
+              class="form-control shadow-sm"
+            />
+          
               </div>
+              
               <div class="col-3">
                  <input
                   type="submit"
@@ -80,6 +78,7 @@
               </div>
             </div>
            </form>
+           
            <div class="overview">
             <h1 id="city"></h1>
             <ul>
@@ -95,7 +94,7 @@
                 <img src="https://ssl.gstatic.com/onebox/weather/64/sunny.png" alt="Clear" id="icon" class="float-left" />
                 <div class="float-left">
                   <strong id="temperature"></strong
-                  ><span class="units"> °C</span>
+                  >
                 </div>
               </div>
             </div>
@@ -132,15 +131,16 @@
               >
                 Get Location
               </button>
-            
-          
-          
        </div>
+       
         <small>
           <a href="https://github.com/samarasance/myawesomeweatherapp"
             >Open-Code source</a>
           by Samara Sance
         </small>
+        
     <script src="script.js"></script>
+    </div>
+    
   </body>
 </html>
