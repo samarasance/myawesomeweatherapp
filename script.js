@@ -23,18 +23,16 @@ function formatDate(timestamp) {
   return `${day} ${hours}:${minutes}`;
 }
 
+function displayForcast() {
+  let forcastElement = document.querySelector("#forcast");
+}
+
 function formatDay(timestamp) {
   let date = new Date(timestamp * 1000);
   let day = date.getDay();
   let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
   return days[day];
 }
-
-function displayForcast(response) {
-  let forcast = response.data.daily;
-}
-
-let forcastElement = document.querySelector("#forcast");
 
 let forecastHTML = `<div class="row">`;
 forecast.forEach(function (forecastDay, index) {
@@ -76,7 +74,7 @@ function getForecast(coordinates) {
 
 function displayTemperature(response) {
   let temperatureElement = document.querySelector("#temperature");
-  let cityElement = document.querySelector("#city");
+  let cityElement = document.querySelector(".city");
   let descriptionElement = document.querySelector("#description");
   let humidityElement = document.querySelector("#humidity");
   let windElement = document.querySelector("#wind");
@@ -97,15 +95,24 @@ function displayTemperature(response) {
   getForecast(response.data.coord);
 }
 
-function searchCity(city) {
-  let apiKey = "292929ff665169ef5a98dcc8cc29979a";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-
-  axios.get(apiUrl).then(displayTemperature);
-}
-function handleSubmit(event) {
+function search(event) {
   event.preventDefault();
   let cityInputElement = document.querySelector("#city-input");
+  console.log(cityInputElement.value);
+}
+
+let apiKey = "292929ff665169ef5a98dcc8cc29979a";
+let city = "Washington DC";
+let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+
+axios.get(apiUrl).then(displayTemperature);
+
+let form = document.querySelector("#search-form");
+form.addEventListener("submit", search);
+
+function handleSubmit(event) {
+  event.preventDefault();
+  let cityInputElement = document.querySelector(".city-input");
   search(cityInputElement.value);
 }
 
@@ -115,8 +122,8 @@ function displayFahrenheitTemperature(event) {
 
   celsiusLink.classList.remove("active");
   fahrenheitLink.classList.add("active");
-  let fahrenheiTemperature = (celsiusTemperature * 9) / 5 + 32;
-  temperatureElement.innerHTML = Math.round(fahrenheiTemperature);
+  let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
+  temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
 }
 
 function displayCelsiusTemperature(event) {
@@ -129,13 +136,14 @@ function displayCelsiusTemperature(event) {
 
 let celsiusTemperature = null;
 
-let form = document.querySelector("#search-form");
-form.addEventListener("submit", handleSubmit);
-
 let fahrenheitLink = document.querySelector("#fahrenheit-link");
 fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
 
 let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", displayCelsiusTemperature);
 
+let currentLocationButton = document.querySelector("#current-location-button");
+currentLocationButton.addEventListener("click", getCurrentLocation);
+
 searchCity("Washington DC");
+displayForcast();
