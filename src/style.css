@@ -3,7 +3,7 @@ h1 {
   line-height: 28px;
   font-family: "Bitter", serif;
   display: block;
-  color: gray;
+  color: rgb(90, 139, 161);
   margin: 0 auto;
   font-weight: 100;
   text-align: center;
@@ -25,12 +25,14 @@ ul {
 li {
   list-style: none;
   display: block;
-  font-size: 16px;
+  font-size: 30px;
   font-weight: 400px;
   height: 19px;
   text-align: right;
   margin: 14;
   padding: 0;
+  font-family: "Patrick Hand", cursive;
+  line-height: 3px;
 }
 p {
   text-align: center;
@@ -42,7 +44,7 @@ p {
   font-family: "Zen Old Mincho", serif;
   color: midnightblue;
   font-size: 55px;
-  text-align: left;
+  text-align: center;
   line-height: 6px;
   margin: 0 auto;
   padding: 20px;
@@ -57,7 +59,7 @@ p {
 }
 .date {
   font-size: 50px;
-  font-family: "Patrick Hand", cursive;
+  font-family: "Zen Old Mincho", serif;
   text-align: center;
 }
 .description {
