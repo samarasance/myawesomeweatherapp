@@ -32,12 +32,18 @@ li {
   margin: 14;
   padding: 0;
 }
+p {
+  text-align: center;
+  font-size: 30px;
+}
 
 .today {
   font-family: "Zen Old Mincho", serif;
   color: midnightblue;
   font-size: 55px;
   text-align: left;
+  line-height: 6px;
+  margin: 0 auto;
 }
 .date {
   font-size: 50px;
@@ -67,7 +73,7 @@ li {
 }
 .city {
   font-size: 35px;
-  text-align: right;
+  text-align: center;
   font-family: "Bitter", serif;
   display: block;
   color: gray;
@@ -81,7 +87,7 @@ li {
   max-width: 400px;
 }
 .float-left {
-  margin: 0 auto;
+  margin: 20px;
 }
 .weather-app-wrapper {
   margin: 30px auto;
