@@ -57,7 +57,7 @@ p {
   font-family: "Courier New", Courier, monospace;
   font-weight: bolder;
   height: 5px;
-  text-align: center;
+  text-align: left;
   text-decoration: wavy;
   margin-bottom: 35px;
 }
@@ -105,7 +105,7 @@ p {
   margin-bottom: 20px;
 }
 .weather-temperature img {
-  margin-right: 25px;
+  margin-right: 6px;
   float: left;
   height: 90px;
   width: 80px;
