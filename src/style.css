@@ -45,6 +45,15 @@ p {
   text-align: left;
   line-height: 6px;
   margin: 0 auto;
+  padding: 20px;
+}
+.time {
+  line-height: 4px;
+  font-family: "Zen Old Mincho", serif;
+  font-size: 35px;
+  margin: 14;
+  padding: 0;
+  text-align: center;
 }
 .date {
   font-size: 50px;
