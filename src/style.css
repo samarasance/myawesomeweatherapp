@@ -105,9 +105,9 @@ p {
   margin-bottom: 20px;
 }
 .weather-temperature img {
-  margin-right: 5px;
+  margin-right: 25px;
   float: left;
-  height: 75px;
+  height: 90px;
   width: 80px;
 }
 
@@ -116,4 +116,11 @@ p {
   font-size: 15px;
   text-align: center;
   top: -34px;
+}
+
+.weather-temperature strong {
+  color: grey;
+  font-size: 65px;
+  font-weight: lighter;
+  line-height: 1;
 }
