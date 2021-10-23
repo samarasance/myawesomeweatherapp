@@ -34,13 +34,13 @@
       rel="stylesheet"
     />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
     <link
       href="https://fonts.googleapis.com/css2?family=Atma:wght@300&family=Bitter:wght@500&family=Dosis:wght@300&family=Roboto+Mono:ital,wght@1,300&display=swap"
       rel="stylesheet"
     />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Atma:wght@300&family=Bitter:wght@500&family=Dosis:wght@300&family=Patrick+Hand&family=Roboto+Mono:ital,wght@1,300&display=swap"
@@ -49,12 +49,16 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IM+Fell+English+SC&display=swap" rel="stylesheet">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IM+Fell+English+SC&family=Zen+Old+Mincho:wght@700&display=swap" rel="stylesheet">
   </head>
   <body>
     <div class="container">
       <div class="weather-app-wrapper">
         <div class="weather-app">
-          <h1><strong>Welcome</strong></h1>
+          <p><strong>Welcome</strong></p>
            <div class="row">
         <div class="col">
           <form class="search-form" id="search-form">
@@ -82,34 +86,30 @@
            </form>
            
            <div class="overview">
-            <h1 id="city"></h1>
+            <h1>Washinton DC</h1>
             <ul>
               <li>Last updated: <span id="date"></span></li>
               <li id="description"></li>
             </ul>
           </div>
-              <h2 class="today">Today is: </h2>
+        
+              <h2 class="today">Today is: </h2><div class="today-date">
 
             <div class="row">
-            <div class="col-6">
-              <div class="clearfix weather-temperature">
+            <div class="col-md-8">
+             
                 <img src="https://ssl.gstatic.com/onebox/weather/64/sunny.png" alt="Clear" id="icon" class="float-left" />
                 <div class="float-left">
-                  <strong id="temperature"></strong
-                  >
+                
                 </div>
               </div>
             </div>
-            
-            
-            
-           
+          
           
             
                 <h3 class="current">Current Temperature</h3>
                 
-            
-              <h3 class="temperature">84°</h3>
+              <h3 class="temperature">78°</h3>
               <span class="units">
                 <a href="#" id="celsius-link">°C</a> |
                 <a href="#" id="fahrenheit-link">°F</a>

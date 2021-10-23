@@ -1,7 +1,10 @@
 h1 {
+  font-size: 35px;
   text-align: center;
-  font-family: "Atma", cursive;
-  line-height: 4px;
+  font-family: "Bitter", serif;
+  display: block;
+  color: gray;
+  margin: 0 auto;
 }
 
 h2 {
@@ -28,10 +31,10 @@ li {
 }
 
 .today {
-  font-family: "IM Fell English SC", serif;
+  font-family: "Zen Old Mincho", serif;
   color: midnightblue;
   font-size: 55px;
-  text-align: center;
+  text-align: left;
 }
 .date {
   font-size: 50px;
@@ -47,15 +50,17 @@ li {
   height: 5px;
   text-align: center;
   text-decoration: wavy;
+  margin-bottom: 35px;
 }
 
 .temperature {
   font-size: 65px;
   height: 50px;
   font-stretch: ultra-expanded;
-  text-align: left;
+  display: block;
   font-weight: 400;
   line-height: 1;
+  text-align: center;
 }
 .city {
   font-size: 35px;
