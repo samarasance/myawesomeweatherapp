@@ -22,14 +22,15 @@ ul {
   margin: 0;
   padding: 0;
 }
-
 li {
   list-style: none;
   display: block;
   font-size: 16px;
-  font-weight: 100;
+  font-weight: 400px;
   height: 19px;
   text-align: right;
+  margin: 14;
+  padding: 0;
 }
 
 .today {
@@ -79,7 +80,9 @@ li {
   border-radius: 7px;
   max-width: 400px;
 }
-
+.float-left {
+  margin: 0 auto;
+}
 .weather-app-wrapper {
   margin: 30px auto;
   max-width: 800px;
