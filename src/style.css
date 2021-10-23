@@ -35,6 +35,7 @@ li {
 p {
   text-align: center;
   font-size: 30px;
+  font-family: "Nunito Sans", sans-serif;
 }
 
 .today {
@@ -49,6 +50,9 @@ p {
   font-size: 50px;
   font-family: "Patrick Hand", cursive;
   text-align: center;
+}
+.description {
+  text-transform: capitalize;
 }
 .temp {
   font-size: 20px;
