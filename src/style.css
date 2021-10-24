@@ -31,7 +31,7 @@ li {
   text-align: right;
   margin: 14;
   padding: 0;
-  font-family: "Patrick Hand", cursive;
+  font-family: "Nunito Sans", sans-serif;
   line-height: 3px;
 }
 p {
@@ -64,6 +64,7 @@ p {
 }
 .description {
   text-transform: capitalize;
+  text-align: right;
 }
 .temp {
   font-size: 20px;
