@@ -21,16 +21,16 @@ function formatDate(timestamp) {
   return `${day} ${hours}:${minutes}`;
 }
 
-function displayForecast() {
+function displayForecast(response) {
   let forecastElement = document.querySelector("#forecast");
+  let days = ["Sun", "Mon", "Tues", "Wed", "Thur", "Fri"];
 
   let forecastHTML = `<div class="row">`;
-  let days = ["Sun", "Mon", "Tues", "Wed", "Thur", "Fri"];
+
   days.forEach(function (day) {
     forecastHTML =
       forecastHTML +
-      `
-              
+      ` 
               <div class="col-2">
                 <div class="weather-forecast-date">
                 ${day}
@@ -51,6 +51,12 @@ function displayForecast() {
 
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
+}
+
+function getForecast(coordinates) {
+  let apiKey = "292929ff665169ef5a98dcc8cc29979a";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=imperial`;
+  axios.get(apiUrl).then(displayForecast);
 }
 
 function displayTemperature(response) {
@@ -77,7 +83,6 @@ function displayTemperature(response) {
 
 function search(city) {
   let apiKey = "292929ff665169ef5a98dcc8cc29979a";
-
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=imperial`;
   axios.get(apiUrl).then(displayTemperature);
 }
@@ -88,9 +93,8 @@ function handleSubmit(event) {
   search(cityInputElement.value);
 }
 
-search("Washington DC");
-
-displayForecast();
-
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
+
+search("New York");
+displayForecast();
