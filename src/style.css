@@ -140,3 +140,12 @@ p {
   font-weight: lighter;
   line-height: 1;
 }
+
+.weather-forecast {
+  margin-top: 19px;
+  text-align: center;
+}
+.weather-forecast-date {
+  font-size: 15px;
+  color: #8a8d91;
+}
