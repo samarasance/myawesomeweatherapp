@@ -21,32 +21,47 @@ function formatDate(timestamp) {
   return `${day} ${hours}:${minutes}`;
 }
 
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thur", "Fri", "Sat"];
+
+  return days[day];
+}
+
 function displayForecast(response) {
+  let forecast = response.data.daily;
+
   let forecastElement = document.querySelector("#forecast");
-  let days = ["Sun", "Mon", "Tues", "Wed", "Thur", "Fri"];
 
   let forecastHTML = `<div class="row">`;
 
-  days.forEach(function (day) {
-    forecastHTML =
-      forecastHTML +
-      ` 
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 6) {
+      forecastHTML =
+        forecastHTML +
+        ` 
               <div class="col-2">
                 <div class="weather-forecast-date">
-                ${day}
+                ${formatDay(forecastDay.dt)}
+               
                 </div>
-                <img src ="https://ssl.gstatic.com/onebox/weather/48/thunderstorms.png" 
-                alt="rainy"/>
+                <img 
+                src ="https://openweathermap.org/img/wn/${
+                  forecastDay.weather[0].icon
+                }@2x.png" 
+                alt=""/>
                 <br>
                 <div class="weather-forecast-temperature">
                   <span class = "weather-forecast-temperature-max">
-                87° </span>
+                ${Math.round(forecastDay.temp.max)}° </span>
                 <span class = "weather-forecast-temperature-min">
-                65°
+                ${Math.round(forecastDay.temp.min)}°
                 </span>
                 </div>
                 </div>
             `;
+    }
   });
 
   forecastHTML = forecastHTML + `</div>`;
@@ -79,6 +94,8 @@ function displayTemperature(response) {
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
   iconElement.setAttribute("alt", response.data.weather[0].description);
+
+  getForecast(response.data.coord);
 }
 
 function search(city) {
@@ -97,4 +114,3 @@ let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
 
 search("Washington DC");
-displayForecast();
