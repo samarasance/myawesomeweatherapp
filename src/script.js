@@ -21,6 +21,38 @@ function formatDate(timestamp) {
   return `${day} ${hours}:${minutes}`;
 }
 
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+
+  let forecastHTML = `<div class="row">`;
+  let days = ["Sun", "Mon", "Tues", "Wed", "Thur", "Fri"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+              
+              <div class="col-2">
+                <div class="weather-forecast-date">
+                ${day}
+                </div>
+                <img src ="https://ssl.gstatic.com/onebox/weather/48/thunderstorms.png" 
+                alt="rainy"/>
+                <br>
+                <div class="weather-forecast-temperature">
+                  <span class = "weather-forecast-temperature-max">
+                87° </span>
+                <span class = "weather-forecast-temperature-min">
+                65°
+                </span>
+                </div>
+                </div>
+            `;
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+
 function displayTemperature(response) {
   let temperatureElement = document.querySelector("#temperature");
   let cityElement = document.querySelector("#city");
@@ -57,6 +89,8 @@ function handleSubmit(event) {
 }
 
 search("Washington DC");
+
+displayForecast();
 
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
