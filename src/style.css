@@ -102,8 +102,10 @@ p {
   border-radius: 7px;
   max-width: 400px;
 }
-.float-left {
+.bouncy {
   margin: 20px;
+  animation: forwards;
+  position: relative;
 }
 .weather-app-wrapper {
   margin: 30px auto;
